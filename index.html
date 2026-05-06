@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ntombifuthi | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
+    body {
+      background: linear-gradient(120deg,#150f2c,#0f172a);
+      color:white;
+    }
+
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      position:sticky;
+      top:0;
+      background:rgba(2,6,23,0.8);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+
+    header h1 { color:#38bdf8; }
+
+    nav a {
+      margin-left:25px;
+      text-decoration:none;
+      color:white;
+      position:relative;
+    }
+
+    nav a::after {
+      content:'';
+      width:0;
+      height:2px;
+      background:#38bdf8;
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      transition:0.3s;
+    }
+
+    nav a:hover::after { width:100%; }
+
+    .hero {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      padding:80px 8%;
+      gap:40px;
+    }
+
+    .hero-text h2 {
+      font-size:48px;
+      margin-bottom:10px;
+    }
+
+    .hero-text span { color:#38bdf8; }
+
+    .hero-text p {
+      margin:20px 0;
+      line-height:1.7;
+      color:#cbd5f5;
+    }
+
+    .btn-group {
+      display:flex;
+      gap:15px;
+      margin-top:20px;
+    }
+
+    .btn {
+      padding:12px 20px;
+      border-radius:6px;
+      cursor:pointer;
+      border:none;
+      transition:0.3s;
+    }
+
+    .primary {
+      background:#38bdf8;
+      color:black;
+    }
+
+    .primary:hover { background:#0ea5e9; }
+
+    .secondary {
+      background:transparent;
+      border:1px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .secondary:hover {
+      background:#38bdf8;
+      color:black;
+    }
+
+    .socials {
+      margin-top:25px;
+    }
+
+    .socials a {
+      margin-right:15px;
+      font-size:20px;
+      color:#94a3b8;
+      transition:0.3s;
+    }
+
+    .socials a:hover {
+      color:#38bdf8;
+      transform:translateY(-3px);
+    }
+
+    .hero-img {
+      display:flex;
+      justify-content:flex-end;
+    }
+
+    .hero-img img {
+      width:100%;
+      max-width:300px;
+      border-radius:20px;
+      object-fit:cover;
+      box-shadow:0 20px 40px rgba(0,0,0,0.6);
+
+      height: auto;
+
+    }
+
+    section { padding:80px 8%; }
+
+    h2.section-title {
+      margin-bottom:40px;
+      color:#38bdf8;
+    }
+
+    .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* 🔥 Glass card */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow hover effect */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.25);
+  border-color: #38bdf8;
+}
+
+/* Content */
+.project-content h3 {
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.project-content p {
+  color: #cbd5f5;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.btn.small {
+  padding: 8px 14px;
+  font-size: 12px;
+}
+
+
+    .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  cursor: pointer;
+}
+/* This is new */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+  .contact-form {
+  width: 100%;
+}
+
+#skills {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+#skills h2 {
+  color: #38bdf8;
+  margin-bottom: 50px;
+}
+
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.skill-category h3 {
+  margin-bottom: 20px;
+  color: #cbd5f5;
+}
+
+/* 🔥 Modern Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+/* 🔥 Glassmorphism Card */
+.skill {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 25px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Icon */
+.skill i {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+/* Text */
+.skill span {
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+/* ✨ Hover effect */
+.skill:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+  border-color: #38bdf8;
+}
+.skill {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.skill:nth-child(1) { animation-delay: 0.1s; }
+.skill:nth-child(2) { animation-delay: 0.2s; }
+.skill:nth-child(3) { animation-delay: 0.3s; }
+.skill:nth-child(4) { animation-delay: 0.4s; }
+.skill:nth-child(5) { animation-delay: 0.5s; }
+.skill:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero { 
+    grid-template-columns:1fr; 
+    text-align:center; 
+  }
+
+  .hero-img { 
+    justify-content:center; 
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+/*
+    @media(max-width:900px) {
+      .hero { grid-template-columns:1fr; text-align:center; }
+      .hero-img { justify-content:center; }
+    } */
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>MyPortfolio</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href ="#skills">Skills</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h2>Hi, I'm <span>Ntombifuthi Makosonke</span><br>an IT Graduate</h2>
+    <p id="typing"></p>
+
+    <div class="btn-group">
+      <button class="btn primary" onclick="scrollToProjects()">View Projects</button>
+
+      <button class="btn secondary" onClick ="downloadCV()"> Download CV</button>
+      
+      <script>
+function downloadCV() {
+  const link = document.createElement("a");
+  link.href = "assets/ntombifuthiP_updatedCv.pdf";
+  link.download = "ntombifuthiP_updatedCV.pdf";
+  link.click();
+}
+</script>
+    </div>
+
+    <div class="socials">
+  <a href="https://github.com/ntombifuthi05" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://linkedin.com/in/ntombifuthi-makosonke-938349327/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="https://twitter.com/Petronella_n target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+  </div>
+
+  <div class="hero-img">
+    <img src="images/WhatsApp Image 2026-04-30 at 23.13.44.jpeg" alt="profile">
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">My Projects</h2>
+
+  <div class="projects">
+
+    <div class="project-card">
+      <div class="project-content">
+        <h3>Consultation Booking App</h3>
+        <p>a Flutter-based mobile application that enables students to securely book, manage, and track academic consultations. The app integrates Firebase Authentication and Cloud Firestore to support real-time data synchronization, role-based access, and secure user management. Built using the MVVM architecture.</p>
+
+        <div class="project-links">
+          <a href="#" target="_blank" class="btn small primary">Live Demo</a>
+          <a href="https://github.com/ntombifuthi05/Consultation-Booking-App" target="_blank" class="btn small secondary">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-content">
+        <h3>Leave Management System</h3>
+        <p>This system aims to digitize and streamline leave management by offering a web application connected to firestore database. It enhances communication between employees and supervisors, improves data accuracy, and reduces delays caused by manual processes. The system ensures real-time updates, secure access, and efficient tracking of leave requests.</p>
+
+        <div class="project-links">
+          <a href="#" target="_blank" class="btn small primary">Live Demo</a>
+          <a href="https://github.com/ntombifuthi05/LeaveManagementSystem" target="_blank" class="btn small secondary">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-content">
+        <h3>Portfolio Website</h3>
+        <p>Modern responsive portfolio showcasing my skills.</p>
+
+        <div class="project-links">
+          <a href="#" target="_blank" class="btn small primary">Live Demo</a>
+          <a href="#" target="_blank" class="btn small secondary">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+
+  <div style="display:flex; gap:30px; flex-wrap:wrap; align-items:center;">
+
+    <div style="display:flex; align-items:center; gap:10px;">
+      <i class="fas fa-envelope" style="color:#38bdf8; font-size:22px;"></i>
+      <span>ntombifuthicoco@email.com</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <i class="fas fa-phone" style="color:#38bdf8; font-size:22px;"></i>
+      <span>+27 76 325 6580</span>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <div>
+   <h3>Contact Me</h3>
+    <form action="https://formspree.io/f/mvzlowwv" method="POST" class="contact-form">
+    
+    <input 
+      type="text" 
+      name="name" 
+      placeholder="Your Name" 
+      required
+    />
+
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Your Email" 
+      required
+    />
+
+    <textarea 
+      name="message" 
+      placeholder="Your Message" 
+      rows="5" 
+      required
+    ></textarea>
+
+    <button type="submit" class="btn primary">Send Message</button>
+
+  </form>
+</div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Technical Skills</h2>
+
+  <div class="skills-container">
+
+    <!-- Programming -->
+    <div class="skill-category">
+      <h3>Programming</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="devicon-csharp-plain"></i><span>C#</span></div>
+        <div class="skill"><i class="devicon-dart-plain"></i><span>Dart</span></div>
+        <div class="skill"><i class="devicon-html5-plain"></i><span>HTML</span></div>
+        <div class="skill"><i class="devicon-css3-plain"></i><span>CSS</span></div>
+        <div class="skill"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+        <div class="skill"><i class="devicon-python-plain"></i><span>Python</span></div>
+        <div class="skill"><i class="devicon-react-original"></i><span>React</span></div>
+        <div class="skill"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
+      </div>
+    </div>
+
+    <!-- Frameworks & Tools -->
+    <div class="skill-category">
+      <h3>Frameworks & Tools</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="devicon-flutter-plain"></i><span>Flutter</span></div>
+        <div class="skill"><i class="devicon-dotnetcore-plain"></i><span>ASP.NET</span></div>
+        <div class="skill"><i class="devicon-firebase-plain"></i><span>Firebase</span></div>
+        <div class="skill"><i class="devicon-vscode-plain"></i><span>VS Code</span></div>
+      </div>
+    </div>
+
+    <!-- Databases -->
+    <div class="skill-category">
+      <h3>Databases</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="devicon-firebase-plain"></i><span>Firestore</span></div>
+        <div class="skill"><i class="devicon-mysql-plain"></i><span>SQL</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 NtombifuthiMakosonke</p>
+</footer>
+
+<script>
+function scrollToProjects(){
+  document.getElementById('projects').scrollIntoView({behavior:'smooth'});
+}
+
+const roles=["IT Graduate","C#, ASP.Net Developer","Flutter Developer","Web Developer"];
+let i=0,j=0,isDeleting=false;
+
+function type(){
+  let current=roles[i];
+  document.getElementById("typing").textContent=current.substring(0,j);
+
+  if(!isDeleting && j<current.length) j++;
+  else if(isDeleting && j>0) j--;
+
+  if(j===current.length) isDeleting=true;
+  if(j===0 && isDeleting){ isDeleting=false; i=(i+1)%roles.length; }
+
+  setTimeout(type,isDeleting?50:100);
+}
+
+type();
+</script>
+
+</body>
+</html>
