@@ -6,7 +6,7 @@ A modern and responsive personal portfolio website built to showcase my projects
 
 ## 🚀 Live Demo
 
-🔗 [View Portfolio](https://your-portfolio-link.netlify.app)
+🔗 [View Portfolio](https://resonant-faun-b0e996.netlify.app)
 
 ---
 
