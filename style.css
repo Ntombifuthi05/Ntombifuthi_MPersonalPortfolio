@@ -1,0 +1,452 @@
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
+    body {
+      background: linear-gradient(120deg,#150f2c,#0f172a);
+      color:white;
+    }
+    body.light-mode {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body,
+header,
+.card,
+.project-card,
+.skill,
+input,
+textarea,
+button {
+  transition: all 0.3s ease;
+}
+
+/* Header */
+body.light-mode header {
+  background: rgba(255,255,255,0.8);
+}
+
+/* Text */
+body.light-mode p,
+body.light-mode span,
+body.light-mode nav a {
+  color: #1e293b;
+}
+
+/* Cards */
+body.light-mode .card,
+body.light-mode .project-card,
+body.light-mode .skill {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #0f172a;
+}
+
+/* Inputs */
+body.light-mode input,
+body.light-mode textarea {
+  background: white;
+  color: black;
+  border: 1px solid #cbd5e1;
+}
+
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      position:sticky;
+      top:0;
+      background:rgba(2,6,23,0.8);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+
+    header h1 { color:#38bdf8; }
+
+    nav a {
+      margin-left:25px;
+      text-decoration:none;
+      color:white;
+      position:relative;
+    }
+
+    nav a::after {
+      content:'';
+      width:0;
+      height:2px;
+      background:#38bdf8;
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      transition:0.3s;
+    }
+
+    nav a:hover::after { width:100%; }
+
+    .hero {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      padding:80px 8%;
+      gap:40px;
+    }
+
+    .hero-text h2 {
+      font-size:48px;
+      margin-bottom:10px;
+    }
+
+    .hero-text span { color:#38bdf8; }
+
+    .hero-text p {
+      margin:20px 0;
+      line-height:1.7;
+      color:#cbd5f5;
+    }
+
+    .btn-group {
+      display:flex;
+      gap:15px;
+      margin-top:20px;
+    }
+
+    .btn {
+      padding:12px 20px;
+      border-radius:6px;
+      cursor:pointer;
+      border:none;
+      transition:0.3s;
+    }
+
+    .primary {
+      background:#38bdf8;
+      color:black;
+    }
+
+    .primary:hover { background:#0ea5e9; }
+
+    .secondary {
+      background:transparent;
+      border:1px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .secondary:hover {
+      background:#38bdf8;
+      color:black;
+    }
+
+    .socials {
+      margin-top:25px;
+    }
+
+    .socials a {
+      margin-right:15px;
+      font-size:20px;
+      color:#94a3b8;
+      transition:0.3s;
+    }
+
+    .socials a:hover {
+      color:#38bdf8;
+      transform:translateY(-3px);
+    }
+
+    .hero-img {
+      display:flex;
+      justify-content:flex-end;
+    }
+
+    .hero-img img {
+      width:100%;
+      max-width:300px;
+      border-radius:20px;
+      object-fit:cover;
+      box-shadow:0 20px 40px rgba(0,0,0,0.6);
+
+      height: auto;
+
+    }
+
+    section { padding:80px 8%; }
+
+    h2.section-title {
+      margin-bottom:40px;
+      color:#38bdf8;
+    }
+
+    .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* 🔥 Glass card */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow hover effect */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.25);
+  border-color: #38bdf8;
+}
+
+/* Content */
+.project-content h3 {
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.project-content p {
+  color: #cbd5f5;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.btn.small {
+  padding: 8px 14px;
+  font-size: 12px;
+}
+
+
+    .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  cursor: pointer;
+}
+/* This is new */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+  .contact-form {
+  width: 100%;
+}
+
+#skills {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+#skills h2 {
+  color: #38bdf8;
+  margin-bottom: 50px;
+}
+
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.skill-category h3 {
+  margin-bottom: 20px;
+  color: #cbd5f5;
+}
+
+/* 🔥 Modern Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+/* 🔥 Glassmorphism Card */
+.skill {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 25px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Icon */
+.skill i {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+/* Text */
+.skill span {
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+/* ✨ Hover effect */
+.skill:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+  border-color: #38bdf8;
+}
+.skill {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.skill:nth-child(1) { animation-delay: 0.1s; }
+.skill:nth-child(2) { animation-delay: 0.2s; }
+.skill:nth-child(3) { animation-delay: 0.3s; }
+.skill:nth-child(4) { animation-delay: 0.4s; }
+.skill:nth-child(5) { animation-delay: 0.5s; }
+.skill:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#theme-toggle {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  padding: 10px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #38bdf8;
+  color: black;
+}
+body.light-mode {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Header */
+body.light-mode header {
+  background: rgba(255,255,255,0.9) !important;
+}
+
+/* Text */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode p,
+body.light-mode span,
+body.light-mode nav a {
+  color: #0f172a !important;
+}
+
+/* Hero paragraph */
+body.light-mode .hero-text p {
+  color: #334155 !important;
+}
+
+/* Cards */
+body.light-mode .card,
+body.light-mode .project-card,
+body.light-mode .skill {
+  background: rgba(255,255,255,0.8) !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  color: #0f172a !important;
+}
+
+/* Inputs */
+body.light-mode input,
+body.light-mode textarea {
+  background: white !important;
+  color: black !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* Footer */
+body.light-mode footer {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+@media (max-width: 768px) {
+
+  .hero { 
+    grid-template-columns:1fr; 
+    text-align:center; 
+  }
+
+  .hero-img { 
+    justify-content:center; 
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
